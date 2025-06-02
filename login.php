@@ -74,8 +74,8 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit" href="dashboard.php">Sign in</button>
-	<p>Already have an account:<a href="index.php">Sign up</a> </p>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Sign in</button>
+	<p>Already have an account:<a href="index.php" >Sign up</a> </p>
   </form>
 </main>
 

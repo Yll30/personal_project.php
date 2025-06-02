@@ -3,7 +3,7 @@
 $user="root";
 $pass="";
 $server="localhost";
-$dbname="php_project";
+$dbname="php";
 
 try {
 	//Creating a PDO to connect with database

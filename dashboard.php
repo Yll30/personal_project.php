@@ -19,16 +19,16 @@
     $users_data = $selectUsers->fetchAll();
     
     // Fetch movies
-    $sql_movies = "SELECT * FROM movies";
-    $selectMovies = $conn->prepare($sql_movies);
+    $sql_rooms = "SELECT * FROM rooms";
+    $selectRooms = $conn->prepare($sql_rooms);
     
     try {
         // Try to run the query
-        $selectMovies->execute();
-        $movies_data = $selectMovies->fetchAll(PDO::FETCH_ASSOC);
+        $selectRooms->execute();
+        $roomes_data = $selectRooms->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         // Set empty array if error
-        $movies_data = [];
+        $roomes_data = [];
     }
 
 
