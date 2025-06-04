@@ -60,6 +60,7 @@
 <!-- Creating a form which will post us some data in register.php file -->
 <main class="form-signin">
   <form action="register.php" method="post">
+    <img class="mb-4" src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Register</h1>
 
     <div class="form-floating">
@@ -88,7 +89,7 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit" href="dashboard.php">Sign up</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Sign up</button>
     <span>Already have an account: </span><a href="login.php">Sign in</a>
   </form>
 </main>

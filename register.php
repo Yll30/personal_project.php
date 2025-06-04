@@ -32,8 +32,8 @@
 
 			$sql = "INSERT INTO users(emri,username,email,password, confirm_password) VALUES (:emri, :username, :email, :password, :confirm_password)";
 
-		    $insertSql = $conn->prepare($sql);
-		
+			$insertSql = $conn->prepare($sql);
+			
 
 			$insertSql->bindParam(':emri', $emri);
 			$insertSql->bindParam(':username', $username);
@@ -41,8 +41,7 @@
 			$insertSql->bindParam(':password', $password);
 			$insertSql->bindParam(':confirm_password', $confirm_password);
 
-		
-            $selectUser->execute();
+			$insertSql->execute();
 
 			header("Location: login.php");
 
