@@ -35,12 +35,11 @@
 			//bindParam binds a parameter to the specified variable name, so we bind :username to $username variable
 
 			$selectUser->bindParam(":username", $username);
-			$selectUser->bindParam(":emri", $emri);
 
 			/* At a later time, the application binds the values to the parameters, and the database executes the statement.
 			 The application may execute the statement as many times as it wants with different values */
 
-			
+			$selectUser->execute();
 
 			/*The fetch() method allows you to fetch a row from a result set associated with a PDOStatement object. Internally,
 			 the fetch() method fetches a single row from a result set and moves the internal pointer to the next row in the result set.*/
@@ -60,9 +59,9 @@
 				if (password_verify($password, $data['password'])) {
 					//If this condition is true, we will store $data values to $_SESSION variables
 					$_SESSION['id'] = $data['id'];
-					$_SESSION['emri'] = $data['emri'];
 					$_SESSION['username'] = $data['username'];
 					$_SESSION['email'] = $data['email'];
+					$_SESSION['emri'] = $data['emri'];
 					$_SESSION['is_admin'] = $data['is_admin'];
 
 					//And head to dashboard.php

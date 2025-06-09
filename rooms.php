@@ -10,7 +10,7 @@
  <!DOCTYPE html>
  <html>
  <head>
- 	<title>Dashboard</title>
+ 	<title></title>
  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
  	 <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -85,20 +85,18 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
+        <h1 class="h2">Rooms</h1>
         
       </div>
 
     
-
-      <h2>Movies</h2>
 
        <form action="addMovie.php" method="post">
     
         
         <div class="form-floating">
           <input type="text" class="form-control" id="floatingInput" placeholder="Movie Name" name="movie_name" >
-          <label for="floatingInput">Movie name</label>
+          <label for="floatingInput">Room number</label>
         </div>
         <div class="form-floating">
           <input type="text" class="form-control" id="floatingInput" placeholder="Movie Description" name="movie_desc" >

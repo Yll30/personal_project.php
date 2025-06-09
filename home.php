@@ -6,10 +6,10 @@
 	
    include_once('config.php');
 
-   $sql = "SELECT * FROM movies";
-   $selectMovies = $conn->prepare($sql);
-   $selectMovies->execute();
-   $movies_data = $selectMovies->fetchAll();
+   $sql = "SELECT * FROM rooms";
+   $selectRooms = $conn->prepare($sql);
+   $selectRooms->execute();
+   $rooms_data = $selectRooms->fetchAll();
 
 
 
@@ -84,23 +84,21 @@
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-      	<?php foreach ($movies_data as $movie_data) { ?>
+      	<?php foreach ($rooms_data as $rooom_data) { ?>
 
       	<div class="col">
           <div class="card shadow-sm">
 
-            <img src="movie_images/<?php echo $movie_data['movie_image'];  ?>" height="350">
+            <img src="movie_images/<?php echo $room_data['movie_image'];  ?>" height="350">
 
             <div class="card-body">
-              <h4><?php echo $movie_data['movie_name']; ?></h4>
-              <p class="card-text"><?php echo $movie_data['movie_desc']; ?></p>
+              <h4><?php echo $room_data['room_name']; ?></h4>
+              <p class="card-text"><?php echo $room_data['movie_desc']; ?></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="details.php?id=<?php echo $movie_data['id']; ?>"  class="btn btn-sm btn-outline-secondary" >View</a>
-                  <a href="edit.php?id=<?php echo $movie_data['id']; ?>"  class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <a href="details.php?id=<?php echo $room_data['id']; ?>"  class="btn btn-sm btn-outline-secondary" >View</a>
+                  <a href="edit.php?id=<?php echo $room_data['id']; ?>"  class="btn btn-sm btn-outline-secondary">Edit</a>
                 </div>
-                <small class="text-muted">Rating: <?php echo $movie_data['movie_rating']; ?></small>
-                <small class="text-muted"><?php echo $movie_data['movie_quality']; ?></small>
               </div>
             </div>
           </div>
