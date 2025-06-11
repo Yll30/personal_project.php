@@ -2,97 +2,47 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-	<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-	<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-	<link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
-	<link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-	<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<style>
-
-		html,
-	body {
-	  height: 100%;
-	}
-
-	body {
-	  display: flex;
-	  align-items: center;
-	  padding-top: 40px;
-	  padding-bottom: 40px;
-	  background-color: #f5f5f5;
-	}
-
-	.form-signin {
-	  width: 100%;
-	  max-width: 330px;
-	  padding: 15px;
-	  margin: auto;
-	}
-
-	.form-signin .checkbox {
-	  font-weight: 400;
-	}
-
-	.form-signin .form-floating:focus-within {
-	  z-index: 2;
-	}
-
-	.form-signin input[type="email"] {
-	  margin-bottom: -1px;
-	  border-bottom-right-radius: 0;
-	  border-bottom-left-radius: 0;
-	}
-
-	.form-signin input[type="password"] {
-	  margin-bottom: 10px;
-	  border-top-left-radius: 0;
-	  border-top-right-radius: 0;
-	}
-	.form-floating{
-		margin: 10px;
-	}
+		nav,div,li,a{
+			color: #000;
+		}
 	</style>
 </head>
-<body class="text-center">
-<!-- Creating a form which will post us some data in register.php file -->
-<main class="form-signin">
-  <form action="register.php" method="post">
-    <img class="mb-4" src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Register</h1>
-
-    <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Emri" name="emri">
-      <label for="floatingInput">Emri</label>
+<body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.php">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+		<a class="nav-link active me-2" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-2" href="#">Rooms</a>
+        </li>
+		 <li class="nav-item">
+          <a class="nav-link me-2" href="#">Facilities</a>
+        </li>
+		 <li class="nav-item">
+          <a class="nav-link me-2" href="#">Contact us</a>
+        </li>
+		 <li class="nav-item">
+          <a class="nav-link me-2" href="#">About us</a>
+        </li>
+      </ul>
+      <div class="d-flex" role="search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </div>
     </div>
-    <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username">
-      <label for="floatingInput">Username</label>
-    </div>
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email">
-      <label for="floatingInput">Email</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingInput" placeholder="Password" name="password">
-      <label for="floatingInput">Password</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Confirm Password" name="confirm_password">
-      <label for="floatingPassword">Confirm Password</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Sign up</button>
-    <span>Already have an account: </span><a href="login.php">Sign in</a>
-  </form>
-</main>
+  </div>
+</nav>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 </html>

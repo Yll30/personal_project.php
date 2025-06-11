@@ -19,8 +19,8 @@
     $users_data = $selectUsers->fetchAll();
     
     // Fetch movies
-    $sql_movies = "SELECT * FROM movies";
-    $selectMovies = $conn->prepare($sql_movies);
+    $sql_rooms = "SELECT * FROM rooms";
+    $selectRooms = $conn->prepare($sql_rooms);
     
     try {
         // Try to run the query
