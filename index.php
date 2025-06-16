@@ -15,11 +15,23 @@
     }
 
     input[type=number] {
-     -moz-appearance: textfield;
+      -moz-appearance: textfield;
+    }
+
+    img{
+      height: 550px;
+      width: 1500px;
+    }
+
+    .costum-bg{
+      background-color: #2ec1ac;
+    }
+      .costum-bg:hover{
+      background-color: #279e8c;
     }
   </style>
 </head>
-<body>
+<body class="bg-light">
   <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
    <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Navbar</a>
@@ -49,7 +61,7 @@
           Login
         </button>
           <button type="button" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#registerModal">
-          Register
+Register
         </button>
       </div>
     </div>
@@ -117,10 +129,6 @@
                   <input type="number" class="form-control shadow-none" >
               </div>
               <div class="col-md-6 p-0 mb-3">
-                <label class="form-label">Picture</label>
-                <input type="file" class="form-control shadow-none" >
-              </div>
-              <div class="col-md-12 p-0 mb-3">
                 <label class="form-label">Address</label>
                 <textarea class="form-control shadow-none" rows="1"></textarea>
               </div>
@@ -137,8 +145,8 @@
                   <input type="password" class="form-control shadow-none" >
               </div>
               <div class="col-md-6 p-0 mb-3">
-                <label class="form-label">Confirm Password</label>
-                <input type="password" class="form-control shadow-none" >
+                  <label class="form-label">Confirm Password</label>
+                  <input type="password" class="form-control shadow-none" id="floatingPassword" name="confirm_password">
               </div>
             </div>
           </div>
@@ -151,25 +159,72 @@
   </div>
 </div>
 
-<div class="container-fluid">
-      <div class="swiper swiper-container">
+<div class="container-fluid px-lg-4 mt-4">
+    <div class="swiper swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="C:\xampp\htdocs\img\New folder (2)\carousel 3.jpg" />
+          <img src="images/images/image.jpg" class="w-100 d-block"/>
         </div>
         <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <img src="images/images/jade-mountain.jpg" class="w-100 d-block"/>
         </div>
         <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img src="images/images/istockphoto-119926339-612x612.jpg" class="w-100 d-block"/>
         </div>
         <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <img src="images/images/luxury-hotel.jpg" class="w-100 d-block"/>
         </div>
-      </div>
+         <div class="swiper-slide">
+          <img src="images/images/photo-1561501900-3701fa6a0864.jpg" class="w-100 d-block"/>
+        </div>
+       </div>
     </div>
-
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 bg-white shadow p-4 rounded">
+      <h5 class="mb-4">Check Booking Avalability</h5>
+      <form>
+        <div class="row align-items-end">
+          <div class="col-lg-3">
+             <label class="form-label" style="font-weight: 500">Check-in</label>
+             <input type="date" class="form-control shadow-none" >
+          </div>
+           <div class="col-lg-3">
+             <label class="form-label" style="font-weight: 500">Check-out</label>
+             <input type="date" class="form-control shadow-none" >
+          </div>
+          <div class="col-lg-3">
+              <label class="form-label" style="font-weight: 500">Adult</label>
+              <select class="form-select shadow-none">
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+          </div>
+           <div class="col-lg-2">
+              <label class="form-label" style="font-weight: 500">children</label>
+              <select class="form-select shadow-none">
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+          </div>
+          <div class="col-lg-1">
+            <button type="submit" class="btn text-white shadow-none costum-bg">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br>
+<br><br><br>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -178,8 +233,12 @@
       var swiper = new Swiper(".swiper-container", {
         spaceBetween: 30,
         effect: "fade",
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        }
       });
-    </script>
-
+  </script>
 </body>
 </html>
