@@ -1,0 +1,19 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+  margin: 0;
+}
+
+.costum-bg{
+  background-color: #2ec1ac;
+  border: 1px solid #2ec1ac;
+} 
+.costum-bg:hover{
+  border-color: #279e8c;
+}
+
+.h-line{
+  width: 150px;
+  margin: 0 auto;
+  height: 1.7px;
+}
