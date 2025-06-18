@@ -1,133 +1,257 @@
-<?php 
-/*Creating a session  based on a session identifier, passed via a GET or POST request.
-  Creating a form which users will use to give some movie data, then we will post those datas into addMovie.php file
-*/
-
-  session_start();
-
- ?>
-
- <!DOCTYPE html>
- <html>
- <head>
- 	<title></title>
- 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
- 	 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-  	<link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-	<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-	<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-	<link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
-	<link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-	<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
-	<meta name="theme-color" content="#7952b3">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keku Hotel - Rooms</title>
+  <?php require('links.php') ?>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="common.css">
   <style>
-    #floatingInput{
-      margin: 20px 0px;
-    }
+    .h-line{
+  width: 150px;
+  margin: 0 auto;
+  height: 1.7px;
+}
+
+.pop:hover{
+  border-top-color: #279e8c !important;
+  transform: scale(1.03);
+  transition: all 0.3s;
+}
   </style>
- </head>
- <body>
- 
- 
- <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"><?php echo "Welcome to dashboard ".$_SESSION['username']; ?></a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
-  <div class="navbar-nav">
-    <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="logout.php">Sign out</a>
-    </div>
-  </div>
-</header>
+</head>
+<body class="bg-light">
 
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-3">
-      <ul class="nav flex-column">
-           <?php if ($_SESSION['is_admin'] == 'true') { ?>
-            <li class="nav-item">
-              <a class="nav-link" href="home.php">
-                <span data-feather="file"></span>
-                Home
-              </a>
-            </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="dashboard.php">
-              <span data-feather="home"></span>
-              Dashboard
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="list_movies.php">
-              <span data-feather="file"></span>
-              Movies
-            </a>
-          </li>
-        <?php } ?>
-          <li class="nav-item">
-            <a class="nav-link" href="bookings.php">
-              <span ></span>
-              Bookings
-            </a>
-          </li>
-        </ul>
 
-    
-      </div>
-    </nav>
+<?php require('header.php'); ?>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Rooms</h1>
-        
-      </div>
-
-    
-
-       <form action="addMovie.php" method="post">
-    
-        
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Movie Name" name="movie_name" >
-          <label for="floatingInput">Room number</label>
-        </div>
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Movie Description" name="movie_desc" >
-          <label for="floatingInput">Movie Description</label>
-        </div>
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Quality" name="movie_quality" >
-          <label for="floatingInput">Movie Quality</label>
-        </div>
-        <div class="form-floating">
-          <input type="number" class="form-control" id="floatingInput" placeholder="Rating" name="movie_rating" >
-          <label for="floatingInput">Rating</label>
-        </div>
-        <div class="form-floating">
-          <input type="file" class="form-control" id="floatingInput" placeholder="Image" name="movie_image" >
-          <label for="floatingInput">Image</label>
-        </div>
-         <button  class="w-100 btn btn-lg btn-primary" type="submit" name="submit"> Add Movie </button> 
-      </form>
-      
-      </div>
-    </main>
-  </div>
+<div class="my-5 px-4">
+  <h2 class="fw-bold h-font text-center">OUR ROOMS</h2>
+  <div class="h-line bg-dark"> </div>
 </div>
 
-	<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<div class="container">
+  <div class="row">
 
-      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
-  </body>
+    <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 px-lg-0">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white rounded shadow">
+        <div class="container-fluid flex-lg-column align-items-stretch">
+      <h4 class="mt-2">FILTERS</h4>
+      <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="filterDropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-column mt-2 align-items-stretch" id="filterDropdown">
+        <div class="border bg-light p-3 rounded mb-3">
+          <h5 class="mb-3" style="font-size: 18px;">CHECK AVAILABILITY</h5>
+          <label class="form-label">Check-in</label>
+          <input type="date" class="form-control shadow-none mb-3">
+          <label class="form-label">Check-out</label>
+          <input type="date" class="form-control shadow-none">
+        </div>
+         <div class="border bg-light p-3 rounded mb-3">
+          <h5 class="mb-3" style="font-size: 18px;">FACILITIES</h5>
+          <div class="mb-2">
+            <input type="checkbox" id="f1" class="form-check-input shadow-none me-1">
+            <label class="form-check-label" for="f1">Facility one</label>
+          </div>
+          <div class="mb-2">
+            <input type="checkbox" id="f2" class="form-check-input shadow-none me-1">
+            <label class="form-check-label" for="f2">Facility two</label>
+          </div>
+          <div class="mb-2">
+            <input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
+            <label class="form-check-label" for="f3">Facility three</label>
+          </div>
+          </div>
+          <div class="border bg-light p-3 rounded mb-3">
+          <h5 class="mb-3" style="font-size: 18px;">GUESTS</h5>
+          <div class="d-flex">
+            <div class="me-3">
+              <label class="form-label">Adults</label>
+              <input type="number" class="form-control shadow-none">
+            </div>
+            <div>
+              <label class="form-label">Children</label>
+              <input type="number" class="form-control shadow-none">
+              </div>
+            </div>
+          </div>
+          </nav>
+          </div>
+  
+
+   <div class="col-lg-9 col-md-12 px-4">
+  <div class="card mb-4 border-0 shadow">
+  <div class="row g-0 p-3 align-items-center">
+    <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
+      <img src="images/images/rooms3.jpg" class="img-fluid rounded">
+    </div>
+    <div class="col-md-5 px-lg-3 px-md-3 px-0">
+      <h5 class="mb-1">Simpel Room Name</h5>
+      <div class="features mb-3">
+        <h6 class="mb-1">Features</h6>
+        <span class="badge rounded-pill bg-light text-dark text-warp">
+          2 Rooms
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          1 bathroom
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          1 Balcony
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          3 Sofa
+        </span>
+      </div>
+      <div class="facilities mb-3">
+          <h6 class="mb-1">Facilities</h6>
+          <span class="badge rounded-pill bg-light text-dark text-warp">
+          Wifi
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          Television
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          AC
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          Room heater
+        </span>
+    </div>
+    <div class="guests">
+        <h6 class="mb-1">Guests</h6>
+        <span class="badge rounded-pill bg-light text-dark text-warp">
+          Adults
+        </span>
+        <span class="badge rounded-pill bg-light text-dark text-warp">
+          Children
+        </span>
+       </div>
+</div>
+    <div class="col-md-2 text-center">
+       <H6 class="mb-4">50€ per night</H6>
+         <a href="#" class="btn btn-sm w-100 text-white costum-bg shadow-none mb-2">Book Now</a>
+         <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card mb-4 border-0 shadow">
+  <div class="row g-0 p-3 align-items-center">
+    <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
+      <img src="images/images/rooms3.jpg" class="img-fluid rounded">
+    </div>
+    <div class="col-md-5 px-lg-3 px-md-3 px-0">
+      <h5 class="mb-1">Simpel Room Name</h5>
+      <div class="features mb-3">
+        <h6 class="mb-1">Features</h6>
+        <span class="badge rounded-pill bg-light text-dark text-warp">
+          2 Rooms
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          1 bathroom
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          1 Balcony
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          3 Sofa
+        </span>
+      </div>
+      <div class="facilities mb-3">
+          <h6 class="mb-1">Facilities</h6>
+          <span class="badge rounded-pill bg-light text-dark text-warp">
+          Wifi
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          Television
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          AC
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          Room heater
+        </span>
+    </div>
+    <div class="guests">
+        <h6 class="mb-1">Guests</h6>
+        <span class="badge rounded-pill bg-light text-dark text-warp">
+          Adults
+        </span>
+        <span class="badge rounded-pill bg-light text-dark text-warp">
+          Children
+        </span>
+       </div>
+</div>
+    <div class="col-md-2 mt-lg-0 mt-m-0 mt-4 text-center">
+       <H6 class="mb-4">50€ per night</H6>
+         <a href="#" class="btn btn-sm w-100 text-white costum-bg shadow-none mb-2">Book Now</a>
+         <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
+    </div>
+    
+   </div>
+   
+</div>
+<div class="card mb-4 border-0 shadow">
+  <div class="row g-0 p-3 align-items-center">
+    <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
+      <img src="images/images/rooms3.jpg" class="img-fluid rounded">
+    </div>
+    <div class="col-md-5 px-lg-3 px-md-3 px-0">
+      <h5 class="mb-1">Simpel Room Name</h5>
+      <div class="features mb-3">
+        <h6 class="mb-1">Features</h6>
+        <span class="badge rounded-pill bg-light text-dark text-warp">
+          2 Rooms
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          1 bathroom
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          1 Balcony
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          3 Sofa
+        </span>
+      </div>
+      <div class="facilities mb-3">
+          <h6 class="mb-1">Facilities</h6>
+          <span class="badge rounded-pill bg-light text-dark text-warp">
+          Wifi
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          Television
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          AC
+        </span>
+         <span class="badge rounded-pill bg-light text-dark text-warp">
+          Room heater
+        </span>
+    </div>
+    <div class="guests">
+        <h6 class="mb-1">Guests</h6>
+        <span class="badge rounded-pill bg-light text-dark text-warp">
+          Adults
+        </span>
+        <span class="badge rounded-pill bg-light text-dark text-warp">
+          Children
+        </span>
+       </div>
+</div>
+    <div class="col-md-2 text-center">
+       <H6 class="mb-4">50€ per night</H6>
+         <a href="#" class="btn btn-sm w-100 text-white costum-bg shadow-none mb-2">Book Now</a>
+         <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
+    </div>
+    
+   </div>
+  </div>
+  
+</div>
+
+<?php require('footer.php') ?>
+
+</body>
 </html>
-
-
- </body>
- </html>
