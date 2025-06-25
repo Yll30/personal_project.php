@@ -1,15 +1,13 @@
 <?php
-//Initialization of some variables for maintaining database data
-$user="root";
-$pass="";
-$server="localhost";
-$dbname="php";
+$host = 'localhost';      // Usually 'localhost'
+$db   = 'hotel_db';       // Your database name
+$user = 'root';           // Your DB username (default is 'root' for XAMPP)
+$pass = '';               // Your DB password ('' if using XAMPP default)
 
-try {
-	//Creating a PDO to connect with database
-	$conn =new PDO("mysql:host=$server;dbname=$dbname",$user,$pass);
-} catch (PDOException $e) {
-	echo "error: " . $e->getMessage();
+$conn = new mysqli($host, $user, $pass, $db);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-
 ?>

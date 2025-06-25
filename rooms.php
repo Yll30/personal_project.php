@@ -7,6 +7,8 @@
   <?php require('links.php') ?>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="common.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
     .h-line{
   width: 150px;
@@ -131,8 +133,7 @@
 </div>
     <div class="col-md-2 text-center">
        <H6 class="mb-4">50€ per night</H6>
-         <a href="#" class="btn btn-sm w-100 text-white costum-bg shadow-none mb-2">Book Now</a>
-         <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
+         <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none mb-2">Book Now</a>
     </div>
     
   </div>
@@ -186,8 +187,7 @@
 </div>
     <div class="col-md-2 mt-lg-0 mt-m-0 mt-4 text-center">
        <H6 class="mb-4">50€ per night</H6>
-         <a href="#" class="btn btn-sm w-100 text-white costum-bg shadow-none mb-2">Book Now</a>
-         <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
+        <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none mb-2">Book Now</a>
     </div>
     
    </div>
@@ -242,8 +242,7 @@
 </div>
     <div class="col-md-2 text-center">
        <H6 class="mb-4">50€ per night</H6>
-         <a href="#" class="btn btn-sm w-100 text-white costum-bg shadow-none mb-2">Book Now</a>
-         <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none">More Details</a>
+       <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none mb-2">Book Now</a>
     </div>
     
    </div>

@@ -9,7 +9,7 @@
    $sql = "SELECT * FROM rooms";
    $selectRooms = $conn->prepare($sql);
    $selectRooms->execute();
-   $rooms_data = $selectRooms->fetchAll();
+   $rooms_status = $selectRooms->fetchAll();
 
 
 

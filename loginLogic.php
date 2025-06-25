@@ -11,10 +11,10 @@
 	if(isset($_POST['submit']))
 	{
 		//We will collect username from form data after submitting an HTML form with method="post".
-		$username = $_POST['username'];
+		$username = trim($_POST['name'] ?? '');
 
 		//We will collect password from form data after submitting an HTML form with method="post".
-		$password = $_POST['password'];
+		$password = trim($_POST['password'] ?? '');
 
 		//Check if any of username and password variables is empty
 		if (empty($username) || empty($password)) {
@@ -27,7 +27,7 @@
 		else{
 
 			//If false, we will create a query to select id,emri,username,email,password,is_admin from users table based on each username
-			$sql = "SELECT id, emri, username, email, password, is_admin FROM users WHERE username=:username";
+			$sql = "SELECT id, name, email, password, is_admin FROM users WHERE username = :username";
 
 			//We use prepared statement as a feature used to execute the same sql statement repeatedly with high efficiency
 			$selectUser = $conn->prepare($sql);
@@ -44,10 +44,10 @@
 			/*The fetch() method allows you to fetch a row from a result set associated with a PDOStatement object. Internally,
 			 the fetch() method fetches a single row from a result set and moves the internal pointer to the next row in the result set.*/
 
-			$data = $selectUser->fetch();
+			$data = $selectUser->fetch(PDO::FETCH_ASSOC);
 
 			//We will check if $data value(which in this case would be username) does not exist:
-			if ($data == false) {
+			if ($data === false) {
 				
 
 				//If the condition is true, then we will echo this message
@@ -59,13 +59,13 @@
 				if (password_verify($password, $data['password'])) {
 					//If this condition is true, we will store $data values to $_SESSION variables
 					$_SESSION['id'] = $data['id'];
-					$_SESSION['username'] = $data['username'];
+					$_SESSION['name'] = $data['name'];
 					$_SESSION['email'] = $data['email'];
-					$_SESSION['emri'] = $data['emri'];
 					$_SESSION['is_admin'] = $data['is_admin'];
 
 					//And head to dashboard.php
 					header('Location: dashboard.php');
+					exit;
 				}
 				else{
 					//If the second condition is not true, then we will echo this message:

@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keku Hotel - Home</title>
-  <?php require('links.php') ?>
+  <?php require('links.php') 
+  ?>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="common.css">
   <style>
@@ -100,7 +101,7 @@
               </select>
           </div>
           <div class="col-lg-1 mb-lg-3 mt-2">
-            <button type="submit" class="btn text-white shadow-none costum-bg">Submit</button>
+            <button href="rooms.php" class="btn btn-sm w-100 btn-outline-dark shadow-none mb-2">See More</button>
           </div>
         </div>
       </form>
@@ -167,8 +168,7 @@
          </span>
        </div>
        <div class="d-flex justify-content-evenly mb-2">
-         <a href="#" class="btn btn-sm text-white costum-bg shadow-none">Book Now</a>
-         <a href="#" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
+         <a href="bookings.php" class="btn btn-sm w-100 btn-outline-dark shadow-none mb-2">Book Now</a>
        </div>
       </div>
       </div>
@@ -220,8 +220,7 @@
          </span>
        </div>
        <div class="d-flex justify-content-evenly mb-2">
-         <a href="#" class="btn btn-sm text-white costum-bg shadow-none">Book Now</a>
-         <a href="#" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
+         <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none mb-2">Book Now</a>
        </div>
       </div>
       </div>
@@ -273,8 +272,7 @@
          </span>
        </div>
        <div class="d-flex justify-content-evenly mb-2">
-         <a href="#" class="btn btn-sm text-white costum-bg shadow-none">Book Now</a>
-         <a href="#" class="btn btn-sm btn-outline-dark shadow-none">More Details</a>
+         <a href="#" class="btn btn-sm w-100 btn-outline-dark shadow-none mb-2">Book Now</a>
        </div>
       </div>
       </div>
@@ -285,6 +283,13 @@
     </div>
   </div>
 </div>
+
+  <form action="bookings.php" method="post">
+    <input type="hidden" name="room_id" value="<?= $room['id'] ?>">
+    <label>Check-in: <input type="date" name="check_in" required></label>
+    <label>Check-out: <input type="date" name="check_out" required></label>
+    <button type="submit" name="book_now" class="btn btn-primary">Book Now</button>
+</form>
 
 <h2 class="mt-5 pt-4 mb-5 text-center fw-bold h-font">OUR FACILITIES</h2>
 
